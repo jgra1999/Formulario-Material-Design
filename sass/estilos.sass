@@ -1,0 +1,226 @@
+$primario: #fb5817
+$primario-claro: #ffb482
+$blanco: #f2f2f2
+$error: #ff0000
+$active: #afafaf
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body 
+    background: $blanco
+    font-family: Arial, Helvetica, sans-serif
+    border-top: 30px solid $primario
+    font-size: 16px
+    font-weight: bold
+
+.wrap
+    width: 90%
+    max-width: 700px
+    padding: 40px
+    margin: auto
+    background: #fff
+    box-shadow: 0px 0px 3px grey 
+
+.contenedor
+    width: 100%
+    color: $blanco
+    padding: 50px
+
+.formulario
+    width: 100%
+    margin: auto
+
+.formulario .input-group
+    position: relative
+    margin-bottom: 32px
+
+.formulario .input-group input[type="text"], input[type="email"], input[type="password"]
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 1em
+    color: #000
+    font-weight: bold
+    width: 100%
+    outline: none
+    padding: 15px
+    background: none
+    border: none
+    border-bottom: 3px solid $primario-claro
+
+/** --------------------ESTADO DE LOS INPUTS --------------------- **/
+
+.formulario .input-group input[type="text"]:active
+   outline: none
+   border-bottom: 3px solid $primario
+
+.formulario .input-group input[type="text"]:focus
+   outline: none
+   border-bottom: 3px solid $primario
+
+.formulario .input-group input[type="text"].error
+    outline: none
+    border-bottom: 3px solid $error
+    + label
+     color: $error
+
+.formulario .input-group input[type="email"]:active
+   outline: none
+   border-bottom: 3px solid $primario
+
+.formulario .input-group input[type="email"]:focus
+   outline: none
+   border-bottom: 3px solid $primario
+
+.formulario .input-group input[type="email"].error
+   outline: none
+   border-bottom: 3px solid $error
+   + label
+     color: $error
+
+.formulario .input-group input[type="password"]:active
+   outline: none
+   border-bottom: 3px solid $primario
+
+.formulario .input-group input[type="password"]:focus
+   outline: none
+   border-bottom: 3px solid $primario
+
+.formulario .input-group input[type="password"].error
+   outline: none
+   border-bottom: 3px solid $error
+   + label
+     color: $error
+    
+.formulario .input-group label
+    color: $primario
+    &.label
+        position: absolute
+        top: 16px
+        left: 0
+        font-size: 1em
+        line-height: 1em
+        margin-left: 1em
+        -webkit-transition: all .3s ease 
+        -o-transition: all .3s ease  
+        transition: all .3s ease 
+    
+.formulario .input-group .label 
+    &.active
+        top: -12px
+        font-size: 12px
+        line-height: 12px
+        color: $active
+    
+/** ---------RADIO BUTTONS--------- **/    
+.formulario .input-group.radio label
+    display: inline-block
+    cursor: pointer
+    color: $primario
+    position: relative
+    padding: 5px 15px 5px 51px
+    font-size: 1em
+    border-radius: 3px
+    -webkit-transition: all .3s ease
+    -o-transition:  all .3s ease
+    transition: all .3s ease
+
+    &:hover
+        background: rgba($primario-claro, 0.7)
+
+    &::before
+        content: ""
+        width: 17px
+        height: 17px
+        position: absolute 
+        left: 15px
+        border-radius: 50%
+        background: none
+        border: 3px solid $primario
+
+.formulario .input-group.radio 
+    &.error label
+        color: $error
+
+        &:hover
+            background: rgba($error, 0.2)
+
+        &::before
+            border: 3px solid $error
+
+.formulario .input-group input[type="radio"]
+    display: none
+
+    &:checked + label::before
+        display: none
+    
+    &:checked + label
+        padding: 5px 15px
+        background: $primario
+        border-radius: 3px
+        color: #fff
+
+/** ---------CHECKBOX--------- **/
+
+.formulario .input-group.checkbox label
+    display: inline-block
+    cursor: pointer
+    color: $primario
+    position: relative
+    padding: 5px 15px 5px 51px
+    font-size: 1em
+    border-radius: 3px
+    -webkit-transition: all .3s ease
+    -o-transition: all .3s ease 
+    transition: all .3s ease
+    &:hover
+        background: rgba($primario-claro, 0.7)
+
+    &::before
+        content: ""
+        width: 17px
+        height: 17px
+        position: absolute 
+        left: 15px
+        border-radius: 3px
+        background: none
+        border: 3px solid $primario
+
+.formulario .input-group.checkbox
+    &.error label
+        color: $error
+
+        &:hover
+            background: rgba($error, 0.2)
+
+        &::before
+            border: 3px solid $error
+
+.formulario .input-group input[type="checkbox"]
+    display: none
+    &:checked + label::before
+        display: none
+    
+    &:checked + label
+        padding: 5px 15px
+        background: $primario
+        border-radius: 3px
+        color: #fff
+        
+/** ------------SUBMIT------------- **/
+.formulario input[type="submit"]
+    background: $primario
+    border-radius: 1px
+    border: 3px solid $blanco
+    color: #ffffff
+    cursor: pointer
+    display: inline-block
+    padding: 15px
+    width: 100%
+    font-size: 1em
+    -webkit-transition: all .3s ease
+    -o-transition: all .3s ease 
+    transition: all .3s ease
+    &:hover
+        background: #ff6d33
